@@ -5,8 +5,8 @@ library(metafor)
 data <- read.csv("../data/raw_studies.csv")
 trials <- data[data$study_id != "CHAMPION_Oxy", ]
 es <- escalc(measure="PLO", xi=event_count, ni=n, data=trials)
-# Using PM estimator for tau^2 as REML failed to converge on high-proportion data
 res <- rma(yi, vi, data=es, method="PM", test="knha")
+l1o <- leave1out(res)
 png("../paper/forest_plot.png", width=1000, height=500, res=100)
 par(mar=c(5,4,2,2))
 forest(res, transf=transf.ilogit, slab=trials$study_id, header=TRUE, 
@@ -16,11 +16,16 @@ forest(res, transf=transf.ilogit, slab=trials$study_id, header=TRUE,
        xlab="Proportion")
 text(c(-2, -1, -0.5), res$k+2, c("Intervention", "Events", "N"), font=2, cex=0.9)
 dev.off()
+png("../paper/funnel_plot.png", width=600, height=600, res=100)
+funnel(res, main="Funnel Plot (Logit Scale)")
+dev.off()
 sink("../paper/analysis_summary.txt")
 cat("=== Heat-Stable Carbetocin Meta-Analysis Summary ===\n")
 print(summary(res))
 cat("\n\n=== Back-transformed Pooled Estimate (Proportion) ===\n")
 cat(sprintf("Pooled Proportion: %.3f (95%% CI: %.3f - %.3f)\n", 
             transf.ilogit(res$b), transf.ilogit(res$ci.lb), transf.ilogit(res$ci.ub)))
+cat("\n=== Leave-One-Out Sensitivity Analysis ===\n")
+print(l1o)
 sink()
 print("Meta-analysis complete.")

@@ -1,0 +1,32 @@
+{
+  "title": "Heat-Stable Carbetocin for Postpartum Hemorrhage Prevention in Africa",
+  "summary": "An E156 micro-paper and meta-analysis summarizing the pooled efficacy of heat-stable carbetocin for PPH prevention in Africa.",
+  "type": "prevalence",
+  "primary_estimand": "Proportion of women avoiding significant postpartum hemorrhage",
+  "study_count": 5,
+  "participant_count": 16100,
+  "version": "1.0.0",
+  "date": "2026-04-27",
+  "certainty": "moderate",
+  "app": "Interactive HTML bundle (pending)",
+  "data": "Local raw_studies.csv in the data/ directory",
+  "code": "Local generation via code/meta_analysis.R",
+  "doi": "Pending",
+  "protocol": "protocol/PROTOCOL.md",
+  "source_article": "Derived from literature review of 5 RCTs and cohorts on ct.gov",
+  "body": "In women across Africa, what is the pooled efficacy of heat-stable carbetocin for the prevention of postpartum hemorrhage compared to the standard oxytocin protocol? We conducted a random-effects meta-analysis of five trial cohorts involving 16,100 participants to estimate the pooled proportion of those avoiding significant blood loss after vaginal birth. Studies covering the major CHAMPION trial and programmatic pilots across Nigeria, Uganda, and South Sudan were synthesized using logit-transformed proportions and the Paule-Mandel estimator for variance. The pooled prevention proportion for heat-stable carbetocin was 0.98, with a 95% confidence interval of 0.98 to 0.99 and extremely low between-study heterogeneity. These findings suggest that heat-stable formulations are highly effective and ideal for rural community births where cold-chain maintenance is currently impossible. Diversifying delivery beyond standard oxytocin remains critical for reducing maternal mortality and improving survival outcomes in low-resource settings. Interpretation is limited by the small number of trials, varying definitions of hemorrhage, and reliance on trial-based reporting.",
+  "studies": [],
+  "primary_plot": {
+    "caption": "Forest plot of Logit Transformed Proportions.",
+    "pooled": {
+      "label": "Pooled PPH prevention",
+      "effect": 0.98,
+      "lower": 0.98,
+      "upper": 0.99
+    }
+  },
+  "validation": {
+    "status": "pass",
+    "checks": []
+  }
+}
