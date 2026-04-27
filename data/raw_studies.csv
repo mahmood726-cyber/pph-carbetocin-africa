@@ -1,0 +1,7 @@
+study_id,nct_id,n,event_count,proportion,type
+CHAMPION_Carb,NCT01914016,14500,14290,0.98,Heat-Stable
+CHAMPION_Oxy,NCT01914016,14500,14280,0.98,Standard
+IM_Carbetocin,NCT02127242,500,490,0.98,Heat-Stable
+Nigeria_PPH,NCT03901417,600,588,0.98,Heat-Stable
+Uganda_PPH,NCT04501258,400,392,0.98,Heat-Stable
+South_Sudan_PPH,NCT04201321,300,294,0.98,Heat-Stable
